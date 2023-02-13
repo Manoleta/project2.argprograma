@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+    background-color: yellow;
+}
+
+.div1{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: bisque;
+}
+
+.flechas{
+    font-size: 2rem;
+}
+
+.div2{
+    display: flex;
+    justify-content: space-around;
+    background-color: darkkhaki;
+}
+
+.div3{
+    display: flex;
+    justify-content: space-around;
+}
