@@ -33,6 +33,8 @@ header{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    width: 70%;
+    align-self: center;
 }
 
 footer{
@@ -64,11 +66,25 @@ tr{
 main{
     display: flex;
     flex-direction: column;
+    
 }
 
 table{
     width: 70%;
     align-self: center;
+}
+
+.details{
+    display: flex;
+    justify-content: space-around;
+    /*background-color: aqua;*/
+    width: 45%;
+    align-self: center;
+    height: 20rem;
+    align-items: center;
+    border: solid;
+    border-radius: 15px;
+    
 }
 
 @media only screen and (min-width: 320px) and (max-width: 768px) {
@@ -94,5 +110,11 @@ table{
         align-items: center;
         flex-wrap: wrap;
         justify-content: space-around;
+    }
+
+    .details{
+        border: none;
+     flex-wrap: wrap;
+     height: auto;
     }
 }
