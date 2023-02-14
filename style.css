@@ -2,19 +2,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+   
 }
 
 header{
     display: flex;
     justify-content: space-around;
-    background-color: yellow;
+    /*background-color: yellow;*/
 }
 
 .div1{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: bisque;
+    /*background-color: bisque;*/
 }
 
 .flechas{
@@ -24,10 +25,74 @@ header{
 .div2{
     display: flex;
     justify-content: space-around;
-    background-color: darkkhaki;
+    /*background-color: darkkhaki;*/
+    flex-wrap: wrap;
 }
 
 .div3{
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+}
+.iconos {
+    font-size: 2rem;
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.end-card{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-img-top{
+    height: 10rem;
+}
+
+
+tr{
+    font-size: 0.80rem;
+    height: 1rem;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+table{
+    width: 70%;
+    align-self: center;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+
+    header{
+        flex-direction: column;
+    }
+
+    .logo{
+        align-self: center;
+    }
+
+    ul{
+        flex-direction: column;
+        align-items: center;
+    }
+    .div2{
+        flex-direction: column;
+    }
+
+    .list-group{
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
 }
