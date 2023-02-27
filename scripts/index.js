@@ -180,11 +180,26 @@ for (let i = 0; i < data.events.length; i++) {
     let fecha = new Date(data.currentDate)
     let fechaevent = new Date(element.date)
     if (fecha > fechaevent ) {
-        upcomingarray.push(data.events[i])
-    } else {
         pastarray.push(data.events[i])
+    } else {
+        upcomingarray.push(data.events[i])
     }
 }
 
 console.log(upcomingarray)
 console.log(pastarray)
+
+
+for (let i = 0; i < data.events.length; i++) {
+
+    div3.innerHTML += `<div class="card" style="width: 18rem;">
+    <img src="${data.events.image}" class="card-img-top" alt="cinema" id="img">
+    <div class="card-body">
+      <h5 class="card-title" id="title">${data.events.name}</h5>
+      <p class="card-text" id="text">${data.events.description}</p>
+      <div class="end-card">
+        <p class="card-price" id="price">Price ${data.events.price}</p>
+       <a href="./details.html" class="btn btn-primary">Ver más</a>
+      </div> 
+    </div>`
+}
