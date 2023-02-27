@@ -186,19 +186,19 @@ for (let i = 0; i < data.events.length; i++) {
     }
 }
 
-console.log(upcomingarray)
-console.log(pastarray)
+//console.log(upcomingarray)
+//console.log(pastarray)
 
 
 for (let i = 0; i < data.events.length; i++) {
-
+    let element2 = data.events[i]
     div3.innerHTML += `<div class="card" style="width: 18rem;">
-    <img src="${data.events.image}" class="card-img-top" alt="cinema" id="img">
+    <img src="${element2.image}" class="card-img-top" alt="cinema" id="img">
     <div class="card-body">
-      <h5 class="card-title" id="title">${data.events.name}</h5>
-      <p class="card-text" id="text">${data.events.description}</p>
+      <h5 class="card-title" id="title">${element2.name}</h5>
+      <p class="card-text" id="text">${element2.description}</p>
       <div class="end-card">
-        <p class="card-price" id="price">Price ${data.events.price}</p>
+        <p class="card-price" id="price">Price ${element2.price}</p>
        <a href="./details.html" class="btn btn-primary">Ver más</a>
       </div> 
     </div>`
