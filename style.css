@@ -9,6 +9,7 @@ header{
     display: flex;
     justify-content: space-around;
     /*background-color: yellow;*/
+    
 }
 
 .div1{
@@ -40,6 +41,7 @@ header{
 footer{
     display: flex;
     justify-content: space-around;
+    height: 10vh;
 }
 .iconos {
     font-size: 2rem;
@@ -66,7 +68,7 @@ tr{
 main{
     display: flex;
     flex-direction: column;
-    
+    min-height: 83vh;
 }
 
 table{
