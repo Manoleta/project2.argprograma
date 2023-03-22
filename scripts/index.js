@@ -1,34 +1,55 @@
-  let pastarray = []
-  let upcomingarray = []
+imprimirCards (arrEvents)
+imprimirCategories(arrEvents)
 
-for (let i = 0; i < data.events.length; i++) {
-    let element = data.events[i];
-    let fecha = new Date(data.currentDate)
-    let fechaevent = new Date(element.date)
-    if (fecha > fechaevent ) {
-        pastarray.push(data.events[i])
-    } else {
-        upcomingarray.push(data.events[i])
+      const inputCat = document.querySelectorAll('input[type="checkbox"]')
+
+  inputCat.forEach(function(checkbox) {
+      checkbox.addEventListener("change", filtroCategory);
+      });
+  
+      const buttonSearch = document.getElementById("button_search");
+      buttonSearch.addEventListener("click", filtroCategory);
+      
+  
+//Filtro por Categoria 
+function filtroCategory () {
+    const arrfiltro = [] ;
+    inputCat.forEach(input => {
+               if(input.checked) {
+                arrfiltro.push(input.value);
+                 }
+       });
+  
+    let eventoChequeado = arrEvents.filter((obj) =>{
+    return arrfiltro.includes(obj.category);
+     })
+  
+     const textSearch = document.getElementById("textsearch").value.toLowerCase();
+     let eventSearch = arrEvents.filter(function(event) {
+     return event.name.toLowerCase().includes(textSearch) || event.description.toLowerCase().includes(textSearch);})
+  
+  if (arrfiltro.length === 0 && eventSearch.length){
+    imprimirCards(eventSearch);
+  }else{
+    if(arrfiltro.length > 0){
+      eventSearch = eventSearch.filter(event => {
+        return arrfiltro.some(cat =>event.category.includes(cat))
+      })
+      if(eventSearch.length){ 
+        imprimirCards(eventSearch);}
+     else{
+      notFound();
+     }
     }
-}
-
-//console.log(upcomingarray)
-//console.log(pastarray)
-
-
-for (let i = 0; i < data.events.length; i++) {
-    let element2 = data.events[i]
-    div3.innerHTML += `<div class="card" style="width: 18rem;">
-    <img src="${element2.image}" class="card-img-top" alt="cinema" id="img">
-    <div class="card-body">
-      <h5 class="card-title" id="title">${element2.name}</h5>
-      <p class="card-text" id="text">${element2.description}</p>
-      <div class="end-card">
-        <p class="card-price" id="price">Price ${element2.price}</p>
-       <a href="./details.html" class="btn btn-primary">Ver más</a>
-      </div> 
-    </div>`
-}
-
-//Probando evitando el reflow
-
+    else{
+      notFound();
+  }
+  }
+  }
+  
+  function notFound(){
+    let divCards = document.getElementById('div-cards')
+    divCards.innerHTML= ''
+    divCards.innerHTML += `<h2>No hay resultados</h2>`
+  }
+  

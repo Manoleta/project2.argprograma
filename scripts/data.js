@@ -172,6 +172,7 @@ var data = {
     ]
   };
 
+  let arrEvents = data.events
 
 // Completo Array objetos Futuro y pasado 
   let pastarray = []
@@ -190,8 +191,45 @@ for (let i = 0; i < data.events.length; i++) {
 
 //Defino funcion para imprimir cards
 
-function imprimirCards (array) {
-    let divCards = document.getElementById('div3')
+function imprimirCards(array) {
+
+    let divCards = document.getElementById('div-cards')
+    divCards.innerHTML= ''
+
+    for (let evento of array) {
+        divCards.innerHTML += `<div class="card" style="width: 18rem;">
+    <img src="${evento.image}" class="card-img-top" alt="cinema" id="img">
+    <div class="card-body">
+      <h5 class="card-title" id="title">${evento.name}</h5>
+      <p class="card-text" id="text">${evento.description}</p>
+      <div class="end-card">
+        <p class="card-price" id="price">Price ${evento.price}</p>
+       <a href="./details.html" class="btn btn-primary">Ver más</a>
+      </div> 
+    </div>`
+    }
 }
 
-console.log (divCards)
+// Defino funcion para categorias dinamicas 
+
+function imprimirCategories (array){
+
+    let categories = []
+
+array.forEach( evento => {
+  if (!categories.includes(evento.category)) {
+      categories.push(evento.category);
+  }
+})
+
+    let ul_cat = document.getElementById('ul-checkbox')
+    ul_cat.innerHTML= ''
+
+categories.forEach(categoria => {ul_cat.innerHTML += `<li class="list-group-item">
+<input class="form-check-input me-1" type="checkbox" value="${categoria}" id="${categoria}">
+<label class="form-check-label" for="${categoria}">${categoria}</label>
+</li>`})
+    
+}
+
+
