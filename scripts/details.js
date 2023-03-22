@@ -19,7 +19,7 @@ console.log(id);
 //Me traigo y guardo en evento el evento cuyo id es el mismo que me llego por la search location
 
 let evento = []
-evento = eventos.find(evento => evento._id == id)
+evento = arrEvents.find(evento => evento._id == id)
 console.log(evento);
 
 let containerDetails = document.getElementById('container_detail')
@@ -27,7 +27,11 @@ containerDetails.innerHTML= ''
 
 function makeDetailCard (objeto)
 {
-    containerDetails.innerHTML +=`figure class="figure">
+    
+    let browserTab = document.querySelector('title')
+    browserTab.innerHTML = evento.name
+
+    containerDetails.innerHTML +=`<figure class="figure">
 <img src="${evento.image}" class="figure-img img-fluid rounded" alt="...">
 </figure>
 <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
@@ -38,7 +42,7 @@ function makeDetailCard (objeto)
 </div>`
 }
 
-
+makeDetailCard(evento)
 
 
 

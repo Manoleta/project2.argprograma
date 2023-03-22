@@ -204,7 +204,7 @@ function imprimirCards(array) {
       <p class="card-text" id="text">${evento.description}</p>
       <div class="end-card">
         <p class="card-price" id="price">Price ${evento.price}</p>
-       <a href="./details.html" class="btn btn-primary">Ver más</a>
+       <a href="./details.html?id=${evento._id}" class="btn btn-primary">Ver más</a>
       </div> 
     </div>`
     }
