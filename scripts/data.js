@@ -193,43 +193,41 @@ for (let i = 0; i < data.events.length; i++) {
 
 function imprimirCards(array) {
 
-    let divCards = document.getElementById('div-cards')
-    divCards.innerHTML= ''
+  let divCards = document.getElementById('div-cards')
+  divCards.innerHTML= ''
 
-    for (let evento of array) {
-        divCards.innerHTML += `<div class="card" style="width: 18rem;">
-    <img src="${evento.image}" class="card-img-top" alt="cinema" id="img">
-    <div class="card-body">
-      <h5 class="card-title" id="title">${evento.name}</h5>
-      <p class="card-text" id="text">${evento.description}</p>
-      <div class="end-card">
-        <p class="card-price" id="price">Price ${evento.price}</p>
-       <a href="./details.html?id=${evento._id}" class="btn btn-primary">Ver más</a>
-      </div> 
-    </div>`
-    }
+  for (let evento of array) {
+      divCards.innerHTML += `<div class="card" style="width: 18rem;">
+  <img src="${evento.image}" class="card-img-top" alt="cinema" id="img">
+  <div class="card-body">
+    <h5 class="card-title" id="title">${evento.name}</h5>
+    <p class="card-text" id="text">${evento.description}</p>
+    <div class="end-card">
+      <p class="card-price" id="price">Price ${evento.price}</p>
+     <a href="./details.html?id=${evento._id}" class="btn btn-primary">Ver más</a>
+    </div> 
+  </div>`
+  }
 }
 
 // Defino funcion para categorias dinamicas 
 
 function imprimirCategories (array){
 
-    let categories = []
+  let categories = []
 
 array.forEach( evento => {
-  if (!categories.includes(evento.category)) {
-      categories.push(evento.category);
-  }
+if (!categories.includes(evento.category)) {
+    categories.push(evento.category);
+}
 })
 
-    let ul_cat = document.getElementById('ul-checkbox')
-    ul_cat.innerHTML= ''
+  let ul_cat = document.getElementById('ul-checkbox')
+  ul_cat.innerHTML= ''
 
 categories.forEach(categoria => {ul_cat.innerHTML += `<li class="list-group-item">
 <input class="form-check-input me-1" type="checkbox" value="${categoria}" id="${categoria}">
 <label class="form-check-label" for="${categoria}">${categoria}</label>
 </li>`})
-    
+  
 }
-
-
