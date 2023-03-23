@@ -96,21 +96,20 @@ async function iniciar() {
     menorPorcentajeAsistencia(datosAPI.events);
 
 
-    const eventosFuturos = [];
-    const eventosPasados = [];
+// Completo Array objetos Futuro y pasado 
+let pastarray = []
+let upcomingarray = []
 
-    const fechaLimite = "2023-03-10";
-
-    for (let i = 0; i < datosAPI.events.length; i++) {
-        let evento = datosAPI.events[i];
-        let fechaEvento = new Date(evento.date);
-
-        if (fechaEvento > new Date(fechaLimite)) {
-            eventosFuturos.push(evento);
-        } else {
-            eventosPasados.push(evento);
-        }
-    }
+for (let i = 0; i < datosAPI.events.length; i++) {
+  let element = datosAPI.events[i];
+  let fecha = new Date("2023-03-20")
+  let fechaevent = new Date(element.date)
+  if (fecha > fechaevent ) {
+      pastarray.push(datosAPI.events[i])
+  } else {
+      upcomingarray.push(datosAPI.events[i])
+  }
+}
 
 
 
@@ -156,9 +155,9 @@ async function iniciar() {
     }
 
 
-    const resultado = obtenerInfoCategorias(eventosPasados);
+    const resultado = obtenerInfoCategorias(pastarray);
 
-    let resultadoFuturo = obtenerInfoCategorias(eventosFuturos)
+    let resultadoFuturo = obtenerInfoCategorias(upcomingarray)
 
 
 

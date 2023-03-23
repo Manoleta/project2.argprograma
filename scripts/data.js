@@ -1,4 +1,4 @@
-var data = {
+/*var data = {
     "currentDate": "2022-01-01",
     "events": [
       {
@@ -170,22 +170,25 @@ var data = {
         "price":250
       }
     ]
-  };
+ // };
 
-  let arrEvents = data.events
+  let arrEvents = data.events*/
+
+/*
+  let arrEvents = datosAPI.events
 
 // Completo Array objetos Futuro y pasado 
   let pastarray = []
   let upcomingarray = []
 
-for (let i = 0; i < data.events.length; i++) {
-    let element = data.events[i];
-    let fecha = new Date(data.currentDate)
+for (let i = 0; i < datosAPI.events.length; i++) {
+    let element = datosAPI.events[i];
+    let fecha = new Date(datosAPI.currentDate)
     let fechaevent = new Date(element.date)
     if (fecha > fechaevent ) {
-        pastarray.push(data.events[i])
+        pastarray.push(datosAPI.events[i])
     } else {
-        upcomingarray.push(data.events[i])
+        upcomingarray.push(datosAPI.events[i])
     }
 }
 
@@ -231,3 +234,4 @@ categories.forEach(categoria => {ul_cat.innerHTML += `<li class="list-group-item
 </li>`})
   
 }
+}*/
